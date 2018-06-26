@@ -16,14 +16,7 @@
             $passwordCreationAthorized = true;
 
             // connexion BDD
-            try
-            {
-                $bdd = new PDO('mysql:host=localhost;dbname=tests', 'root', 'root');
-            }
-            catch (Exception $e)
-            {
-                die('Erreur : '. $e->getMessage());
-            }
+            include('bdd_connection.php');
 
             //Récupération des nicknames en base
             $nickname = htmlspecialchars($_POST['nickname']);

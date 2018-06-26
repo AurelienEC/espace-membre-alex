@@ -11,18 +11,12 @@
     <body>
     <?php
         // connexion BDD
-        try
-        {
-            $bdd = new PDO('mysql:host=localhost;dbname=tests', 'root', 'root');
-        }
-        catch (Exception $e)
-        {
-            die('Erreur : '. $e->getMessage());
-        }
 
         //Variables
         $nickname = htmlspecialchars($_POST['nickname']);
         $password = htmlspecialchars($_POST['password']);
+
+        include('bdd_connection.php');
 
         //récupération du user avec le bon nickname
         $req = $bdd->prepare('SELECT ID, password FROM membres WHERE nickname = :nickname');
