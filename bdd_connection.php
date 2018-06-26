@@ -5,10 +5,10 @@
  * Date: 26/06/2018
  * Time: 12:59
  */
-
+require_once ('config.php');
 try
 {
-    $bdd = new PDO('mysql:host=localhost;dbname=tests', 'root', 'root');
+    $bdd = new PDO('mysql:host='.$host.';dbname='.$dbname, $username, $pwd);
 }
 catch (Exception $e)
 {
