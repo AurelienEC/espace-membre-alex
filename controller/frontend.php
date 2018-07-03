@@ -10,8 +10,9 @@ function home(){
     require_once("View/connectionView.php");
 }
 function connexion(){
+    require_once 'userModel.php';
     $password = htmlspecialchars($_POST['password']);
-    $nickname = htmlspecialchars($_POST['nickname'])
+    $nickname = htmlspecialchars($_POST['nickname']);
     $membre = getMembre($nickname, $password);
     if (!$membre)
     {
